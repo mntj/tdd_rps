@@ -33,6 +33,14 @@ describe("Move assignment and scoring", function() {
     expect(typeof playerMove).toBe('string');
   })
 
+  it("lets a player win if they get 3 sequential victories", function(){
+
+    var winner = isThereAWinner(3, 0);
+    expect(winner).toBe("Player 1 Wins!");
+  })
+
+
+
 
 })
 
@@ -58,4 +66,3 @@ describe("Move assignment and scoring", function() {
 
 
 
-});
