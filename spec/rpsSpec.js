@@ -11,17 +11,17 @@ describe("Rock, Paper, Scissors Rules", function() {
 
   it("lets scissors cut paper", function() {
     var scissorsWinsvsPaper = shoot("scissors", "paper");
-    expect(rockWinsvsScissors).toBe(true);
+    expect(scissorsWinsvsPaper).toBe(true);
   })
 
   it("lets paper overwhelm rock", function() {
     var paperWinsvsRock = shoot("paper", "rock");
-    expect(rockWinsvsScissors).toBe(true);
+    expect(paperWinsvsRock).toBe(true);
   })
 
   it("lets draws happen", function() {
     var someoneWins = shoot("paper", "paper");
-    expect(someoneWins).toBe(false);
+    expect(someoneWins).toBe(undefined);
   })
 
 });

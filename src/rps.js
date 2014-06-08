@@ -5,8 +5,36 @@ Array.prototype.sample = function() {
   return this[~~(Math.random() * this.length)];
 }
 
-var onePlayerMove = undefined;
-var twoPlayerMove = undefined;
+var randomMove = function () {
+  return moves.sample();
+}
+
+var onePlayerMove = randomMove();
+var twoPlayerMove = randomMove();
+
+function shoot (onePlayerMove, twoPlayerMove) {
+  if (onePlayerMove === 'rock' && twoPlayerMove === 'scissors') {
+    return true;
+  }
+
+  else if (onePlayerMove === 'scissors' && twoPlayerMove === 'paper') {
+    return true;
+  }
+
+  else if (onePlayerMove === 'paper' && twoPlayerMove === 'rock') {
+    return true;
+  }
+
+  else if (onePlayerMove === twoPlayerMove) {
+    return undefined;
+  }
+
+  else {
+    return false;
+  }
+}
+
+shoot(onePlayerMove, twoPlayerMove);
 
 var onePlayerScore = 0;
 var twoPlayerScore = 0;
